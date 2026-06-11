@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYB CRUISE | CR Management Matrix</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+   
+
+   
+</head>
+<body>
+    
+     <nav class="navbar">
+        <div class="nav-brand">
+            <img src="/Images/cyb-cruise-group-logo-1.png.png" alt="CRUISE GROUP Logo" class="nav-logo" width="250" height="250">
+           
+        </div>
+        <ul class="nav-links">
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="admin-dashboard.html" class="active">Class Admin Dashboard</a></li>
+        </ul>
+    </nav>  <br>
+
+    <div class="admin-container">
+        <header class="matrix-header">
+            <div>
+                <h1 style="margin: 0; font-size: 1.8rem; color: #ffffff;">CLASS MANAGEMENT CORE :COURSE REP</h1>
+                <small style="color: #00d4ff;"><i class="fa fa-shield"></i> SYSTEM PRIVILEGE LEVEL: ADMIN MASTER</small>
+            </div>
+            <button class="exit-btn" id="closeAdminBtn"><i class="fa fa-sign-out"></i> EXIT MATRIX</button>
+        </header>
+
+        <section class="card-stats" style="padding: 15px; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 15px;">
+            <div>🧑‍💻 CLASS ROSTER BASE: <strong style="color: #fff;">241 Students</strong></div>
+            <div>📂 ACTIVE ATTEMPT LOGS: <strong style="color: #fff;" id="totalTasksCount">0 Tasks Active</strong></div>
+            <div>💾 DISK PRIVILEGE STATUS: <strong style="color: #fff;">LOCAL ENCRYPTED SYNC</strong></div>
+        </section>
+
+        <main class="management-grid">
+            
+            <div class="split-card">
+                <div class="card-accent">
+                    <span>01 // ATTENDANCE TRACKER MATRIX</span>
+                    <i class="fa fa-calendar-check-o"></i>
+                </div>
+                <div class="card-body">
+                    <p style="color: #cbd5e1; margin-top: 0; line-height: 1.5; font-size: 0.9rem;">
+                        Log real-time lecture attendance parameters. Enables tracking metrics on student attendance and lets you generate structured reports instantly.
+                    </p>
+                    <div>
+                        <div class="card-stats">Active Roll-Calls: <span id="attCount" style="color:#fff;">0</span></div>
+                        <a href="attendance.html" class="action-link">Open Terminal</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split-card">
+                <div class="card-accent">
+                    <span>02 // MATERIALS SUBMISSIONS MATRIX</span>
+                    <i class="fa fa-folder-open"></i>
+                </div>
+                <div class="card-body">
+                    <p style="color: #cbd5e1; margin-top: 0; line-height: 1.5; font-size: 0.9rem;">
+                        Track collections of practical lab sheets, manual logbooks, and technical project files. Computes missing or pending submission metrics automatically.
+                    </p>
+                    <div>
+                        <div class="card-stats">Tracked Tasks: <span id="subCount" style="color:#fff;">0</span></div>
+                        <a href="submissions.html" class="action-link">Open Terminal</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split-card">
+                <div class="card-accent">
+                    <span>03 // PAYMENTS MATRIX </span>
+                    <i class="fa fa-money"></i>
+                </div>
+                <div class="card-body">
+                    <p style="color: #cbd5e1; margin-top: 0; line-height: 1.5; font-size: 0.9rem;">
+                        Manage textbook payments, material cost distributions, and handovers. Tracks exactly who has paid versus who has collected their handouts.
+                    </p>
+                    <div>
+                        <div class="card-stats">Payment Items: <span id="payCount" style="color:#fff;">0</span></div>
+                        <a href="payments.html" class="action-link">Open Terminal</a>
+                    </div>
+                </div>
+            </div>
+
+
+         <!--    <div class="split-card">
+             <div class="card-accent">
+                 <span>04 // CLASS UPDATES MATRIX </span>
+                 <i class="fa ​fa-bullhorn"></i>
+             </div>
+             <div class="card-body">
+                 <p style="color: #cbd5e1; margin-top: 0; line-height: 1.5; font-size: 0.9rem;">
+                     Get updates on textbook payments, material cost distributions, and handovers.
+                     CR's updates on class or course activies.
+                 </p>
+                 <div>
+                     <div class="card-stats">Updates Items: <span id="payCount" style="color:#fff;">0</span></div>
+                     <a href="class-updates.html" class="action-link">Open Terminal</a>
+                 </div>
+             </div> -->
+            </div>
+        </main>
+    </div>
+    
+
+  <div class="footer">
+      
+      <div style="margin-top: 50px; padding: 20px; text-align: center; border-top: 1px solid #1c2541; font-family: monospace; color: #cbd5e1; font-size: 0.8rem;">
+ 
+    <div id="identityBadge" style="color: #00d4ff; margin-top: 5px;">
+        <i class="fa fa-shield"></i> SECURE MATRIX NODE ACTIVE
+    </div>
+</div>
+
+    <li><a href="#" id="logoutBtn" style="color: #ff3333;"><i class="fa fa-power-off"></i> LOGOUT</a></li>
+        <small>
+            &copy; 2026 CYB CRUISE GROUP || All rights reserved || <br>
+    
+            Created by {FABIAN CODES HQ} for CYB CLASS OF 2024/2025 (SET). <br>
+        </small>
+    </div>
+
+
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+<script>
+    // 1. Initialize your Firebase App
+    const firebaseConfig = {
+        apiKey: "AIzaSyCO71lvobszEJyjrAVEjo340kypv9EV7IU",
+        authDomain: "cyb-cruise-hub.firebaseapp.com",
+        databaseURL: "https://cyb-cruise-hub-default-rtdb.firebaseio.com",
+        projectId: "cyb-cruise-hub",
+        storageBucket: "cyb-cruise-hub.firebasestorage.app",
+        messagingSenderId: "793275106982",
+        appId: "1:793275106982:web:75fb6f75a3afd7bb6ad667"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Define the global 'db' variable used by your dashboard
+    const database = firebase.database();
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Initialize Dashboard UI listeners
+        initializeFirebaseListeners();
+
+        const closeBtn = document.getElementById('closeAdminBtn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                window.location.href = '/Home.html';
+            });
+        }
+    });
+
+
+    function initializeFirebaseListeners() {
+        // Ensure 'db' is available (global Firebase object)
+        // We attach listeners to the paths where your data lives
+        const paths = ['attendance', 'submissions', 'payments'];
+
+        paths.forEach(path => {
+            database.ref(path).on('value', (snapshot) => {
+                const data = snapshot.val() || {};
+                const count = Object.keys(data).length;
+
+                // Map the paths to the IDs in your HTML
+                const idMap = {
+                    'attendance': 'attCount',
+                    'submissions': 'subCount',
+                    'payments': 'payCount'
+                };
+
+                const element = document.getElementById(idMap[path]);
+                if (element) {
+                    element.textContent = count;
+                    updateTotalTasks();
+                }
+            });
+        });
+    }
+
+    function updateTotalTasks() {
+        const att = parseInt(document.getElementById('attCount').textContent) || 0;
+        const sub = parseInt(document.getElementById('subCount').textContent) || 0;
+        const pay = parseInt(document.getElementById('payCount').textContent) || 0;
+
+        document.getElementById('totalTasksCount').textContent = `${att + sub + pay} Active Tasks`;
+    }
+</script>
+
+<!-- <script src="student-dashboard.js" defer></script> -->
+
+
+<script src="/main.js" defer></script>
+
+<!-- <script src="admin-core.js"></script>
+<script src="/main.js"></script>
+
+
+
+    
+    
+
+<script src="admin-dashboard.js"></script> -->
+
+
+</body>
+</html>

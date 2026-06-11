@@ -1,0 +1,35 @@
+/* Custom Multi-Column Grid Configuration for Feed Arrays */
+.updates-grid {
+    margin: 30px;
+    display: grid;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Structural modifications specifically for update components inside list cards */
+.update-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Ensure injected banner assets remain responsive */
+.update-banner {
+    max-height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Smooth scaling support for internal anchor links */
+.update-card .btn:hover {
+    background-color: #00d4ff !important;
+    color: #0b132b !important;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}

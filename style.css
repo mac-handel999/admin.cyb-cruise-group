@@ -1,0 +1,485 @@
+/* Global Reset and Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    /* Updated background to a premium Dark-Blue */
+    --bg-dark: #0a1128; 
+    --card-bg: #111a36;
+    --text-light: #e2e8f0;
+    --text-muted: #94a3b8;
+    --oxblood: #800020;
+    --oxblood-hover: #600018;
+    --terminal-green: #39ff14;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #050917; /* Even deeper dark-blue for contrast */
+    padding: 15px 5%;
+    border-bottom: 2px solid var(--oxblood);
+}
+
+/* .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-light);
+} */
+
+/* New Image Logo Styling */
+.nav-logo {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 4px; /* Optional: rounds the edges of your logo if it's square */
+}
+
+
+
+/* Container styling for the navigation wrapper */
+.nav-ur {
+    width: 100%;
+    background-color: #0b132b;
+    /* Matches your project's Deep Dark-Blue theme */
+    border-bottom: 2px solid #800020;
+    /* Brand Ox-Blood accent bar */
+    padding: 10px 0;
+    overflow: hidden;
+    /* Ensures nothing leaks out of the primary container boundaries */
+}
+
+/* The Link Track List Engine */
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0 15px;
+    /* Side padding so edges don't hug screen boundaries on mobile scroll */
+    list-style: none;
+
+    /* Responsive Overflow Mechanics */
+    overflow-x: auto;
+    /* Activates horizontal scrolling when content spans wider than viewport */
+    overflow-y: hidden;
+    /* Blocks vertical layout slipping */
+    white-space: nowrap;
+    /* Forces all <li> items to sit firmly on a single continuous line */
+
+    /* Smooth Scroll Momentum Configuration */
+    -webkit-overflow-scrolling: touch;
+    /* Kinetic rubber-band scrolling for iOS/Android engines */
+    scroll-snap-type: x mandatory;
+    /* Snap alignments for touchscreen tracks */
+    gap: 15px;
+    /* Clean tracking space between independent links */
+}
+
+/* Hide ugly default browser scrollbars while preserving native swipe functionality */
+.nav-links::-webkit-scrollbar {
+    display: none;
+    /* Safely hides trackbar on Chrome, Safari, and mobile IDE viewports */
+}
+
+.nav-links {
+    -ms-overflow-style: none;
+    /* IE and Edge wrapper mitigation */
+    scrollbar-width: none;
+    /* Firefox profile optimization */
+}
+
+/* Independent List Structural Components */
+.nav-links li {
+    scroll-snap-align: start;
+    /* Locks individual link alignments firmly on swiping */
+    display: inline-block;
+}
+
+/* The Hyperlink Action Items */
+.nav-links a {
+    display: block;
+    color: #cbd5e1;
+    /* Off-white color for structural readability */
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    /* Security Operations theme typography */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    /* Defensive Mobile Scaling Paradigm */
+    font-size: 0.85rem;
+    /* Downscaled base font so more menu items populate mobile space immediately */
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Active State & Desktop Interaction Points */
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff;
+    background-color: #800020;
+    /* Signature brand Ox-Blood highlighting indicator */
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+    /* Soft tactical cyber glow aura */
+}
+
+/* Media Query Optimization for larger screens */
+@media (min-width: 768px) {
+    .nav-links {
+        justify-content: center;
+        /* Centers navigation array perfectly on desktop layouts */
+        overflow-x: visible;
+        /* Disables scroll-tracking dependencies on large monitors */
+        gap: 25px;
+        padding-left: 670px;
+         /* Resets padding for desktop where space is abundant */
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+        /* Restores standard high-resolution display font density */
+    }
+}
+
+a {
+    text-decoration: none;
+    color:green
+}
+
+/* 
+.nav-links {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-light);
+    border-bottom: 2px solid var(--oxblood);
+} */ */
+
+/* Layout Containers */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Utility Elements (Buttons & Inputs) */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--oxblood);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--oxblood-hover);
+}
+
+.btn-secondary {
+    background-color: #1e3a5f; /* Dark blue-grey for secondary buttons */
+    margin-left: 5px;
+}
+
+.btn-secondary:hover {
+    background-color: #112237;
+}
+
+input[type="text"] {
+    background-color: #162244;
+    border: 1px solid #243565;
+    color: var(--text-light);
+    padding: 10px;
+    border-radius: 4px;
+    width: 60%;
+    margin-right: 5px;
+}
+
+input[type="text"]:focus {
+    outline: 1px solid var(--oxblood);
+}
+
+
+.hero {
+    background: linear-gradient(135deg, #111a36 0%, #050917 100%);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #1d2d5a;
+    margin-top: 0px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    box-shadow: 2px 3px 3px #000 ;
+
+}
+
+.hero-image:hover {
+ width: 300px;
+ height: 280px;
+ object-fit: contain;
+ margin-top: 20px;
+ border-radius: 100px;
+ border: 3px solid #1d2d5a;
+ transform: translateX(-8px);
+/*  transition: width ease-in-out 0.3ms;
+transition: border-radius ease-in-out 0.3ms; */
+ transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+ box-shadow: 2px 3px 3px #fff;
+}
+
+/* Cards & Layouts */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #111a36 0%, #050917 100%);
+    border-radius: 8px;
+    border: 1px solid #1d2d5a;
+    margin-top: 40px;
+    
+}
+
+.hero-section h1 {
+   
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.container {
+    margin-top: 30px;
+    padding: 25px;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.action-controls {
+    margin: 20px 0;
+    text-align: center;
+    display: none;
+}
+
+.results-container {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.student-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid var(--oxblood);
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.student-card h3 {
+    margin-bottom: 8px;
+    color: var(--text-light);
+}
+
+.student-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.error {
+    color: #ef4444;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Terminal Log Panel */
+.audit-log-panel {
+    background-color: #020617;
+    color: var(--terminal-green);
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 40px;
+    font-size: 0.85rem;
+    height: 150px;
+    overflow-y: auto;
+    border: 1px solid #1e293b;
+}
+
+.log-entry { margin-bottom: 4px; }
+.log-warn { color: #f59e0b; }
+
+/* CSS Print Media Configurations */
+@media print {
+    body { background-color: #fff; color: #000; }
+    .navbar, .search-container, .action-controls, .audit-log-panel, h3 { display: none !important; }
+    .student-card { border: 1px solid #ccc; background: #fff; color: #000; box-shadow: none; page-break-inside: avoid; }
+    .student-card h3, .student-card p { color: #000; }
+}
+
+
+
+
+
+
+
+/* //for app features */
+
+
+/* Core Section Wrapper */
+.features {
+    margin: 10px;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+/* Section Header Typography (e.g., "APP FEATURES") */
+#features-text {
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    /* High-tech terminal look */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+    /* Cyan cyber glow */
+    border-bottom: 2px solid #800020;
+    /* Ox-Blood underline accent */
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Master Layout Grid Container */
+.features-container {
+    margin: 20px auto;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Auto-responsive layout */
+    gap: 20px;
+    max-width: 1200px;
+}
+
+/* Individual Feature Grid Cards */
+.features-list {
+    margin: 0;
+    padding: 25px 20px;
+    background: #0b132b;
+    /* Deep Dark-Blue background */
+    border: 1px solid #1c2541;
+    /* Subtle structural border */
+    text-align: center;
+    border-radius: 12px;
+    /* Clean, modern radius */
+    color: #cbd5e1;
+    /* Off-white for high-readability body text */
+
+    /* Smooth transition matrix handling hardware performance acceleration */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    /* Subtle deep shadow to anchor the elements */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.5);
+
+    /* Secure typography layout */
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+/* Features Header Tags inside the cards */
+.features-list h3 {
+    color: #00d4ff;
+    /* Technical Cyan for actionable visibility */
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+/* Interactive SOC State Hover Animations */
+.features-list:hover,
+.img-for-hero:hover {
+    background: #800020;
+    /* Shifts smoothly to brand Ox-Blood on hover */
+    border-color: #00d4ff;
+    /* Neon cyan indicator line edge highlight */
+    color: #ffffff;
+
+    /* Subtle upward float vector instead of sudden horizontal jumps */
+    transform: translateY(-8px);
+
+    /* High-tech tactical cyber glow */
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+
+    /* Slightly tightens the border radius to look alert, without completely squaring it */
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background-color: #050917;
+        /* Even deeper dark-blue for contrast */
+        padding: 15px 5%;
+        border-top: 2px solid var(--oxblood);
+        text-align: center;
+}

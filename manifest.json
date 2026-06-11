@@ -1,0 +1,22 @@
+{
+  "short_name": "CYB Cruise Group",
+  "name": "CYB Admin Management System",
+  "icons": [
+    {
+      "src": " /Images/cyb-cruise-group-logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/Images/cyb-cruise-group-logo-1.png.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "start_url_2": "/Home.html",
+  "background_color": "#050b14",
+  "theme_color": "#800020",
+  "display": "standalone",
+  "orientation": "portrait"
+}

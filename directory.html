@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Directory</title>
+   
+  <script>
+    (function enforceAccessControl() {
+        const localToken = localStorage.getItem('cruise_session_token');
+        const localReg = localStorage.getItem('cruise_user_reg');
+        const scrambledTime = localStorage.getItem('cruise_login_time');
+        
+        const currentPath = window.location.pathname;
+        const onLoginPage = currentPath.endsWith('index.html') || currentPath.endsWith('/');
+        const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
+
+        if (!localToken || !localReg || !scrambledTime) {
+            if (!onLoginPage) window.location.href = 'index.html';
+        } else {
+            try {
+                // Unscramble the timestamp to read the raw time integer values
+                const decodedTime = atob(scrambledTime);
+                const sessionAge = Date.now() - parseInt(decodedTime);
+                
+                if (sessionAge > THREE_DAYS_MS) {
+                    if (!onLoginPage) {
+                        localStorage.clear();
+                        alert("SESSION EXPIRED: Security tokens must be rotated every 3 days. Please re-authenticate.");
+                        window.location.href = 'index.html';
+                    }
+                } else {
+                    if (onLoginPage) window.location.href = 'Home.html';
+                }
+            } catch (e) {
+                // If someone manually tampers with the scrambled string, it breaks atob, triggering an instant boot out
+                localStorage.clear();
+                window.location.href = 'index.html';
+            }
+        }
+    })();
+</script>
+
+
+
+   
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="Images/cyb-cruise-group-logo-1.png.png" alt="CRUISE GROUP Logo" class="nav-logo" width="250" height="250">
+           
+        </div>
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="directory.html" class="active">Class Lists</a></li>
+        </ul>
+    </nav>
+
+
+
+<main class="container">
+    <div class="search-container" data-aos="zoom-in-right" data-aos-duration="3000">
+        <h2>CYB 2024/2025 SET Class Lists Database</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Query parameters support strict
+            name matching strings or registration patterns.</p>
+        <input type="text" id="searchInput" placeholder="Search Name or Reg Number..." data-aos="fade-right"
+data-aos-duration="3000"
+>
+        <button id="searchBtn" class="btn" data-aos="fade-left"
+data-aos-duration="3000">Search</button>
+    </div>
+
+    <div id="actionControls" class="action-controls">
+        <button id="printPdfBtn" class="btn btn-secondary">🖨️ Export to PDF</button>
+        <button id="exportExcelBtn" class="btn btn-secondary">📊 Export to Excel (CSV)</button>
+
+
+        <div class="search-container" style="margin-top: 20px; border-top: 1px dashed #1d2d5a; padding-top: 20px;" data-aos="zoom-out-up" data-aos-duraion="3000">
+         
+           <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: #94a3b8;">👑 Course Rep Master Controls</h3>
+            
+            <button id="masterExcelBtn" class="btn" style="background-color: #0d6efd;">📊 Download Full Class Excel</button>
+            <button id="masterPdfBtn" class="btn btn-secondary" style="background-color: #198754;">🖨️ Print Full Class
+                PDF</button>
+        </div>
+    </div>
+
+    <div id="results" class="results-container" data-aos="zoom-in-left" data-aos-duration="3000"></div>
+
+    <h3>System Audit Logs</h3>
+<div id="auditLog" class="audit-log-panel"  data-aos="fade-right" data-aos-duration="3000">
+        <div class="log-entry">[SYSTEM] Secure directory interface initialized.</div>
+    </div>
+</main>
+
+
+    <div class="footer">
+        
+       <div style="margin-top: 50px; padding: 20px; text-align: center; border-top: 1px solid #1c2541; font-family: monospace; color: #cbd5e1; font-size: 0.8rem;">
+ 
+    <div id="identityBadge" style="color: #00d4ff; margin-top: 5px;">
+        <i class="fa fa-shield"></i> SECURE MATRIX NODE ACTIVE
+    </div>
+</div>
+
+    <li><a href="#" id="logoutBtn" style="color: #ff3333;"><i class="fa fa-power-off"></i> LOGOUT</a></li>
+
+        <small>
+            &copy; 2026 CYB CRUISE GROUP || All rights reserved || <br>
+    
+            Created by {FABIAN CODES HQ} for CYB CLASS OF 2024/2025 (SET). <br>
+        </small>
+    </div>
+
+    <script src="main.js"></script>
+    
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+  <script>
+    AOS.init();
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault(); // Stop the default link transition
+
+                // Scrub credentials out of local storage matrix
+                localStorage.removeItem('cruise_session_token');
+                localStorage.removeItem('cruise_user_reg');
+                
+                alert('You Have Successfully Logged Out!!! ');
+
+
+                // Redirect back to login terminal screen
+                window.location.href = 'index.html';
+            });
+        }
+    });
+</script>
+</body>
+</html>

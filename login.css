@@ -1,0 +1,127 @@
+ body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     background-color: #050b14;
+     /* Deep tactical dark backdrop */
+     margin: 0;
+     padding: 15px;
+ }
+
+ .login-matrix {
+     background: #0b132b;
+     border: 2px solid #1c2541;
+     padding: 35px 25px;
+     border-radius: 16px;
+     width: 100%;
+     max-width: 420px;
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+     text-align: center;
+     transition: all 0.4s ease;
+ }
+
+ .login-matrix:hover {
+     border-color: #800020;
+     /* Identity match highlight */
+     box-shadow: 0 0 20px rgba(128, 0, 32, 0.4);
+ }
+
+ .input-group {
+     margin-bottom: 20px;
+     text-align: left;
+ }
+
+ .input-group label {
+     display: block;
+     color: #00d4ff;
+     font-family: monospace;
+     font-size: 0.8rem;
+     margin-bottom: 8px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+ }
+
+ .input-field {
+     width: 100%;
+     padding: 12px 16px;
+     background: #050b14;
+     border: 1px solid #1c2541;
+     border-radius: 8px;
+     color: #ffffff;
+     font-family: 'Courier New', monospace;
+     font-size: 0.95rem;
+     outline: none;
+     box-sizing: border-box;
+     transition: all 0.3s ease;
+ }
+
+ .input-field:focus {
+     border-color: #00d4ff;
+     box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+ }
+
+ .auth-btn {
+     width: 100%;
+     padding: 14px;
+     background-color: #800020;
+     /* Ox-Blood signature */
+     border: none;
+     border-radius: 8px;
+     color: #ffffff;
+     font-family: monospace;
+     font-weight: bold;
+     text-transform: uppercase;
+     cursor: pointer;
+     letter-spacing: 1px;
+     transition: all 0.3s ease;
+ }
+
+ .auth-btn:hover {
+     background-color: #00d4ff;
+     color: #0b132b;
+     box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+ }
+
+ .status-terminal {
+     margin-top: 15px;
+     font-family: monospace;
+     font-size: 0.75rem;
+     color: #cbd5e1;
+     min-height: 20px;
+ }
+
+ 
+
+ .login-container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-direction: row;
+     flex-wrap: wrap;
+     /* min-height: 100vh; */
+     background-color: #050b14;
+     padding: 0;
+     gap: 40px;
+     
+ }
+
+ #loginLogo {
+     padding: 20px;
+     background: #0b132b;
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+     
+     width: 200px;
+     height: 140px;
+      /* Adjusted size for better fit */
+      transition: all 0.3s ease;
+ }
+
+    #loginLogo:hover {
+        box-shadow: 0 0 20px rgba(128, 0, 32, 0.4);
+        /* Subtle glow on hover */
+    }

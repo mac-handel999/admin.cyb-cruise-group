@@ -1,0 +1,39 @@
+[
+      {
+        "id": 1,
+        "date": "June 1, 2026",
+        "time": "14:48",
+        "category": "critical",
+        "heading": "POSTPONEMENT OF DEPARTMENTAL ELECTION",
+      
+      "content": "This is to formally inform all students of the Cyber Security department that the departmental election earlier scheduled to hold on the 5th of June has been postponed.<br><br>This decision was necessitated by the two-week suspension of academic activities recently announced by the school management...<br><br><strong>Signed:</strong><br>Hon. Comm. Anideh Chukwunonso V. (Chairman, ICEC)<br>Hon. Comm. Dugwu Deborah N. (Secretary, ICEC)", 
+
+        "image": "",
+        "actionLink": ""
+    }, 
+    
+        {
+        "id": 2,
+        "date": "June 1, 2026",
+        "time": "15:11",
+        "category": "warn",
+        "heading": "SIWES ONLINE REGISTRATION ONGOING",
+        "content": "<strong>REGISTRATION MANDATE:</strong><br><br>1. Visit the portal to initiate your process: <a href='https://portal.futo.edu.ng/sundry/all' target='_blank' style='color:#00d4ff;'>portal.futo.edu.ng/sundry/all</a> and select the necessary steps to make your online payment and registration.<br><br>2. Print out the <strong>Remita receipt</strong> after payment. It will be submitted physically to the Course Representative with your passport photograph attached at the SIWES OFFICE.<br><br>3. Physical logbooks will be on sale soon. Payment details and next steps will be communicated as soon as the printout submissions are processed.",
+        "image": "",
+        "actionLink": "https://portal.futo.edu.ng/sundry/all"
+    }, 
+    
+        {
+        "id": 3,
+        "date": "June 1, 2026",
+        "time": "15:18",
+        "category": "info",
+        "heading": "ACADEMIC TEXTBOOKS & PRACTICAL MANUALS DISTRIBUTION",
+        "content": "<strong>1. COS 202 TEXTBOOK & MANUAL</strong><br>• Price: ₦7,200<br>• Bank: OPAY<br>• Account Number: 7088282915<br>• Account Name: PRAISE GOD OKEREKE TOCHI<br>⚠️ <em>CRITICAL DIRECTIVE: Send your Full Name, Registration Number, and payment receipt directly to the CR's DM. Do NOT send funds to any other Opay account; unverified transfers will not be accounted for.</em><br><br><br><strong>2. CYB 204 & INS 204 PRACTICAL MANUAL</strong><br>• Price: ₦5,600<br>• Bank: MONIEPOINT<br>• Account Number: 9161510411<br>• Account Name: NDUBUISI KENNETH GODSWILL<br>• Verification DM: 07081836680<br>⚠️ <em>CRITICAL DIRECTIVE: Forward your transaction receipt and structural class details directly to the verified destination number provided above.</em>",
+        "image": "",
+        "actionLink": ""
+    }
+
+
+
+]

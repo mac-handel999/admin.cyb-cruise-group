@@ -1,0 +1,101 @@
+ body {
+            background-color: #050b14;
+            color: #ffffff;
+            font-family: monospace;
+            padding: 20px;
+            margin: 0;
+        }
+        .admin-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .matrix-header {
+            border-bottom: 2px dashed #1c2541;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        /* Tactical Split-Card 3-Column Grid Configuration */
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .split-card {
+            background: #0b132b;
+            border: 2px solid #1c2541;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .split-card:hover {
+            border-color: #800020; /* Ox-blood focus highlight */
+            box-shadow: 0 0 20px rgba(128, 0, 32, 0.3);
+            transform: translateY(-4px);
+        }
+        /* Visual identity split structure */
+        .card-accent {
+            background: #800020;
+            padding: 15px;
+            color: #ffffff;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            letter-spacing: 1px;
+        }
+        .card-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-stats {
+            background: #050b14;
+            border: 1px solid #1c2541;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: #00d4ff;
+        }
+        .action-link {
+            display: block;
+            text-align: center;
+            background: transparent;
+            border: 1px solid #800020;
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .action-link:hover {
+            background: #800020;
+            box-shadow: 0 0 10px rgba(128, 0, 32, 0.6);
+        }
+        .exit-btn {
+            background: #1c2541;
+            border: none;
+            color: #ff3333;
+            padding: 10px 18px;
+            font-family: monospace;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .exit-btn:hover {
+            background: #800020;
+            color: #fff;
+        }

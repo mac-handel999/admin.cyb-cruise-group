@@ -1,0 +1,430 @@
+* {
+  padding: 0px;
+}
+
+
+
+
+/* // for attendance page styles */
+
+ body { 
+   background:#050b14; 
+   color:#fff; 
+   font-family:monospace; 
+   padding:20px; margin:0; 
+   
+ }
+       
+   .sub-container { 
+     max-width:1000px; 
+     margin:0 auto; 
+     padding: 20px;
+     
+   }
+       
+       
+     .control-panel { 
+       background:#0b132b; 
+       border:2px solid #1c2541;
+       border-radius:12px; 
+       padding:20px; 
+       margin-bottom:25px; 
+       
+     }
+        
+      .metrics-bar { 
+        display:grid; 
+        grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); 
+        gap:15px; 
+        margin-bottom:25px; 
+        
+      }
+        
+        
+      .metric-card { 
+        
+        background:#050b14; 
+        border:1px solid #1c2541; 
+        padding:15px; 
+        border-radius:8px; 
+        text-align:center; 
+        
+      }
+        
+      .input-row {
+        display:flex; 
+        gap:10px; 
+        margin-top:15px; 
+        
+      }
+        
+      .input-box { 
+        flex-grow:1;
+        padding:12px; 
+        background:#050b14;
+        border:1px solid #1c2541; 
+        color:#fff; 
+        border-radius:6px; 
+        font-family:monospace; 
+        
+      }
+       
+      
+
+ .btn-action { 
+   background:#800020; 
+   border:none; color:#fff; 
+   padding:12px 20px; 
+   border-radius:6px; 
+   cursor:pointer; 
+   font-weight:bold; 
+   font-family:monospace; 
+   text-transform:uppercase; 
+   
+ }
+    
+    
+  .btn-action:hover { 
+    background:#00d4ff; 
+    color:#0b132b; 
+    box-shadow:0 0 10px rgba(0,212,255,0.4); 
+    
+  }
+       
+   .task-block { 
+     background:#0b132b; 
+     border:1px solid #1c2541; 
+     border-radius:8px; 
+     margin-bottom:20px; 
+     overflow:hidden; 
+     
+   }
+        
+      .task-header { 
+        background:#1c2541; 
+        padding:15px; 
+        display:flex; 
+        justify-content:space-between; 
+        align-items:center; 
+        
+      }
+        
+      .student-row { 
+        display:flex; 
+        justify-content:space-between; 
+        align-items:center; 
+        padding:10px 15px;
+        border-bottom:1px solid #1c2541;
+        }
+        
+        
+      .student-row:hover { 
+        background:rgba(255,255,255,0.02); 
+        
+      }
+       
+       
+       @media print { 
+         
+         .no-print { 
+           display:none !important; 
+           
+         }
+         
+         body {
+           background:#fff;
+           color:#000; 
+           
+         } 
+           .task-block {
+             border:1px solid #000; 
+             
+           } 
+           
+           .task-header { 
+             background:#f0f0f0; color:#000; 
+             
+           } 
+         
+       }
+       
+       
+    /* for submission page styles */   
+    
+    
+    body { 
+      
+      background:#050b14; 
+      color:#fff; 
+      font-family:monospace; 
+      padding:20px; margin:0; 
+      
+    }
+      
+  .sub-container { 
+        max-width:1000px; 
+        margin:0 auto; 
+    
+  }
+      
+    .control-panel { 
+      
+      background:#0b132b; 
+      border:2px solid #1c2541; 
+      border-radius:12px; 
+      padding:20px; 
+      margin-bottom:25px; 
+      
+    }
+    
+     .metrics-bar { 
+       
+       display:grid; 
+       grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); 
+       gap:15px; 
+       margin-bottom:25px; 
+       
+     }
+       
+    
+     .metric-card { 
+       background:#050b14; 
+       border:1px solid #1c2541;
+       padding:15px; border-radius:8px; 
+       text-align:center; 
+       
+     }
+        
+    .input-row { 
+      display:flex; 
+      gap:10px; 
+      margin-top:15px; 
+      
+    }
+        
+        
+    .input-box { 
+      flex-grow:1; 
+      padding:12px; 
+      background:#050b14; 
+      border:1px solid #1c2541; 
+      color:#fff; 
+      border-radius:6px; 
+      font-family:monospace; 
+      
+    }
+        
+    .btn-action { 
+      background:#800020; 
+      border:none; 
+      color:#fff; 
+      padding:12px 20px; 
+      border-radius:6px; 
+      cursor:pointer; 
+      font-weight:bold; 
+      font-family:monospace; 
+      text-transform:uppercase; 
+      
+    }
+        
+      .btn-action:hover { 
+        background:#00d4ff;
+        color:#0b132b; 
+        box-shadow:0 0 10px rgba(0,212,255,0.4);
+        
+        
+      }
+      
+      
+      
+   .task-block {
+     background:#0b132b; 
+     border:1px solid #1c2541; 
+     border-radius:8px; 
+     margin-bottom:20px; 
+     overflow:hidden; 
+     
+   }
+   
+     .task-header { 
+       background:#1c2541; 
+       padding:15px; 
+       display:flex; 
+       justify-content:space-between; 
+       align-items:center; 
+       
+     }
+       
+      
+       .student-row { 
+         display:flex; 
+         justify-content:space-between; 
+         align-items:center; 
+         padding:10px 15px; 
+         border-bottom:1px solid #1c2541; 
+         
+       }
+       
+        @media print { 
+          
+          .no-print { 
+            display:none !important; 
+            
+          } 
+          
+          body { 
+            background:#fff; 
+            color:#000; 
+            
+          } 
+          
+        }
+        
+        
+        
+        /*for payments page styles*/
+        
+   body { 
+     background:#050b14; 
+     color:#fff; 
+     font-family:monospace; 
+     padding:20px; margin:0; 
+     
+   }
+   
+        
+    .sub-container { 
+      max-width:1000px; 
+      margin:0 auto; 
+      
+    }
+    
+     
+     .control-panel { 
+        background:#0b132b; 
+        border:2px solid #1c2541; 
+        border-radius:12px; 
+        padding:20px; 
+        margin-bottom:25px; 
+       
+     }
+     
+        
+   .metrics-bar { 
+     display:grid; 
+     grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); 
+     gap:12px; margin-bottom:25px; 
+     
+   }
+        
+    .metric-card { 
+      background:#050b14; 
+      border:1px solid #1c2541; 
+      padding:12px; 
+      border-radius:8px; 
+      text-align:center; 
+      font-size:0.85rem; 
+      
+    }
+       
+     .input-row { 
+       display:flex; 
+       gap:10px; 
+       margin-top:15px; 
+       
+     }
+        
+        
+     .input-box { 
+       flex-grow:1; 
+       padding:12px; 
+       background:#050b14; 
+       border:1px solid #1c2541; 
+       color:#fff; 
+       border-radius:6px; 
+       font-family:monospace; 
+       
+     }
+     
+       
+     .btn-action { 
+       background:#800020; 
+       border:none; color:#fff; 
+       padding:12px 20px; 
+       border-radius:6px; 
+       cursor:pointer; 
+       font-weight:bold; 
+       font-family:monospace; 
+       text-transform:uppercase; 
+       
+     }
+     
+     
+     .btn-action:hover { 
+       background:#00d4ff; 
+       color:#0b132b; 
+       box-shadow:0 0 10px rgba(0,212,255,0.4); 
+       
+     }
+     
+    .task-block { 
+      background:#0b132b; 
+      border:1px solid #1c2541; 
+      border-radius:8px; 
+      margin-bottom:20px; 
+      overflow:hidden; 
+      
+    }
+    
+   .task-header {
+     background:#1c2541; 
+     padding:15px; 
+     display:flex; 
+     justify-content:space-between; 
+     align-items:center; 
+     
+   }
+   
+   .student-row { 
+     display:grid; 
+     grid-template-columns: 2fr 1fr 1fr 50px;
+     align-items:center; 
+     padding:10px 15px; 
+     border-bottom:1px solid #1c2541; 
+     text-align:center; 
+     
+   }
+   
+       
+   .student-row span { 
+     text-align: left; 
+     
+   }
+   
+  .status-toggle-btn { 
+    padding:6px; 
+    font-size:0.75rem; 
+    font-weight:bold; 
+    border-radius:4px; 
+    cursor:pointer; 
+    border:none; 
+    width:90%; 
+    font-family:monospace; 
+    text-transform:uppercase;
+    
+  }
+  
+        
+    @media print { 
+      .no-print { 
+        display:none !important; 
+        
+      } 
+      
+      body { 
+        background:#fff; 
+        color:#000; 
+        
+      } 
+      
+    }

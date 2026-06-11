@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>study materials</title>
+    
+<script>
+    (function enforceAccessControl() {
+        const localToken = localStorage.getItem('cruise_session_token');
+        const localReg = localStorage.getItem('cruise_user_reg');
+        const scrambledTime = localStorage.getItem('cruise_login_time');
+        
+        const currentPath = window.location.pathname;
+        const onLoginPage = currentPath.endsWith('index.html') || currentPath.endsWith('/');
+        const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
+
+        if (!localToken || !localReg || !scrambledTime) {
+            if (!onLoginPage) window.location.href = 'index.html';
+        } else {
+            try {
+                // Unscramble the timestamp to read the raw time integer values
+                const decodedTime = atob(scrambledTime);
+                const sessionAge = Date.now() - parseInt(decodedTime);
+                
+                if (sessionAge > THREE_DAYS_MS) {
+                    if (!onLoginPage) {
+                        localStorage.clear();
+                        alert("SESSION EXPIRED: Security tokens must be rotated every 3 days. Please re-authenticate.");
+                        window.location.href = 'index.html';
+                    }
+                } else {
+                  if (onLoginPage) window.location.href = 'Home.html';
+                }
+            } catch (e) {
+                // If someone manually tampers with the scrambled string, it breaks atob, triggering an instant boot out
+                localStorage.clear();
+                window.location.href = 'index.html';
+            }
+        }
+    })();
+</script>
+
+
+
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href=" " title="" type="text/css" /> -->
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="Images/cyb-cruise-group-logo-1.png.png" alt="CRUISE GROUP Logo" class="nav-logo" width="250"
+                height="250">
+
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="study-materials.html" class="active">Study Material</a></li>
+        </ul>
+    </nav> <br>
+
+
+<div style="padding:200px; text-align:center; margin:100px; font-weight:bold;">
+    PAGE UNDER CONSTRUCTION
+</div>
+
+
+    <div class="footer">
+        
+        
+           <div style="margin-top: 50px; padding: 20px; text-align: center; border-top: 1px solid #1c2541; font-family: monospace; color: #cbd5e1; font-size: 0.8rem;">
+ 
+    <div id="identityBadge" style="color: #00d4ff; margin-top: 5px;">
+        <i class="fa fa-shield"></i> SECURE MATRIX NODE ACTIVE
+    </div>
+</div>
+
+
+        <small>
+            &copy; 2026 CYB CRUISE GROUP || All rights reserved || <br>
+    
+            Created by {FABIAN CODES HQ} for CYB CLASS OF 2024/2025 (SET). <br>
+        </small>
+    </div>
+    
+    <!-- <script src="main.js"></script> -->
+    
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="main.js" type="text/JavaScript"></script>
+    
+    <!-- <script src="class-updates.js" type="text/javascript" charset="utf-8"></script> -->
+    
+    <script>
+        AOS.init();
+    </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault(); // Stop the default link transition
+
+                // Scrub credentials out of local storage matrix
+                localStorage.removeItem('cruise_session_token');
+                localStorage.removeItem('cruise_user_reg');
+                
+                alert('You Have Successfully Logged Out!!! ');
+
+
+                // Redirect back to login terminal screen
+                window.location.href = 'index.html';
+            });
+        }
+    });
+</script>
+    </body>
+    
+    </html>
