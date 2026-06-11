@@ -297,6 +297,89 @@ transition: border-radius ease-in-out 0.3ms; */
     margin-bottom: 25px;
 }
 
+/* for the time table section */
+
+body {
+    background-color: #050b14;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+}
+
+.timetable-wrapper {
+    margin-top: 20px;
+    max-width: 900px;
+    margin: auto;
+    border: 2px solid #ff007f;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(5, 11, 20, 0.9);
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #ff007f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    color: #00d4ff;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #ff007f;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #1c2541;
+}
+
+.day-cell {
+    font-weight: bold;
+    color: #ff007f;
+    width: 15%;
+}
+
+.time-cell {
+    color: #fff;
+    width: 15%;
+}
+
+.code-cell {
+    color: #00d4ff;
+    font-weight: bold;
+    width: 15%;
+}
+
+.title-cell {
+    color: #fff;
+    width: 40%;
+}
+
+.venue-cell {
+    color: #cbd5e1;
+    font-style: italic;
+}
+
+tr:hover {
+    background: rgba(255, 0, 127, 0.05);
+}
+
+
+
+
+
+
+
+
 .container {
     margin-top: 30px;
     padding: 25px;

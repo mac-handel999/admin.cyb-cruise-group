@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'cyb-cruise-group-v1';
+const CACHE_NAME = 'cyb-cruise-group-v2.1';
 const ASSETS_TO_CACHE = [
   '/',
    '/index.html',

@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/class-list.enc",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, must-revalidate" }
+      ]
+    }
+  ]
+}
